@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  
+
   VALID_FORMAT_JAPANESE = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/
   VALID_FORMAT_KANA = /\A[ァ-ヶー]+\z/
 
@@ -18,5 +18,5 @@ class User < ApplicationRecord
 
   validates :password, format: { 
     with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }
-  
+
 end
