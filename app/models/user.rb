@@ -9,13 +9,14 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :last_name, format: { with: VALID_FORMAT_JAPANESE, message: "is invalid. Input full-width characters" }
-    validates :first_name, format: { with: VALID_FORMAT_JAPANESE, message: "is invalid. Input full-width characters"}
-    validates :last_name_kana, format: { with: VALID_FORMAT_KANA, message: "is invalid. Input full-width characters" }
-    validates :first_name_kana, format: { with: VALID_FORMAT_KANA, message: "is invalid. Input full-width characters" }
+    validates :last_name, format: { with: VALID_FORMAT_JAPANESE, message: 'is invalid. Input full-width characters' }
+    validates :first_name, format: { with: VALID_FORMAT_JAPANESE, message: 'is invalid. Input full-width characters' }
+    validates :last_name_kana, format: { with: VALID_FORMAT_KANA, message: 'is invalid. Input full-width characters' }
+    validates :first_name_kana, format: { with: VALID_FORMAT_KANA, message: 'is invalid. Input full-width characters' }
     validates :birth_date
   end
 
-  validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: "is invalid. Include both letters and numbers" }
+  validates :password, format: { 
+    with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: 'is invalid. Include both letters and numbers' }
   
 end
