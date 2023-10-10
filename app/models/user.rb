@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   
-  VALID_FORMAT_JAPANESE = /\A[ぁ-んァ-ヶー一-龠々]+\z/
+  VALID_FORMAT_JAPANESE = /\A[ぁ-んァ-ヶ一-龥々ー]+\z/
   VALID_FORMAT_KANA = /\A[ァ-ヶー]+\z/
 
   with_options presence: true do
