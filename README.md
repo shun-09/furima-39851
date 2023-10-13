@@ -9,8 +9,8 @@
 | nickname           | string | null: false               |
 | last_name          | string | null: false               |
 | first_name         | string | null: false               |
-| kana_last_name     | string | null: false               |
-| kana_first_name    | string | null: false               |
+| last_name_kana     | string | null: false               |
+| first_name_kana    | string | null: false               |
 | birth_date         | date   | null: false               |
 
 
@@ -37,6 +37,15 @@
 
 - belongs_to :user
 - has_one :order
+- has_one_attached :image
+
+ActiveHash
+- belongs_to :category
+- belongs_to :condition
+- belongs_to :delivery_charge
+- belongs_to :prefecture
+- belongs_to :period
+
 
 ## addresses テーブル
 
