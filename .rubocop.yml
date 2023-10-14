@@ -8,6 +8,12 @@ AllCops:
    - "bin/*"
    - "node_modules/**/*"
    - "Gemfile"
+   - "spec/models/user_spec.rb" #以下追加したもの
+   - "spec/models/item_spec.rb"
+   - "spec/spec_helper.rb"
+   - "test/*"
+   - "Rakefile"
+   - "app/mailers/*"
 
 
 # 1行あたりの文字数をチェックする
@@ -67,6 +73,10 @@ Style/AsciiComments:
 # クラスやモジュール定義前に、それらの説明書きがあるかをチェック（無効）
 Style/Documentation:
  Enabled: false
+
+# クォーテーションが統一されているかチェック（無効）
+Style/StringLiterals:
+  Enabled: false
 
 # ％i（）構文を使用していないシンボルで構成される配列リテラルをチェック（無効）
 Style/SymbolArray:
