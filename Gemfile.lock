@@ -349,7 +349,7 @@ DEPENDENCIES
   pry-rails
   puma (~> 5.0)
   rails (~> 7.0.0)
-  rspec-rails (~> 4.0.0)
+  rspec-rails
   rubocop
   selenium-webdriver
   sprockets-rails

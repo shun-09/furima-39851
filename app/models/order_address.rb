@@ -10,7 +10,7 @@ class OrderAddress
       with: /\A\d{3}-\d{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)"
     }
   end
-  validates :phone_number, numericality: { with: /\A\d{10,11}\z/, message: ' is too short' }
+  validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is too short' }
   validates :phone_number, numericality: { only_integer: true, message: ' is invalid. Input only number' }
 
   def save
