@@ -11,7 +11,7 @@ class OrderAddress
     }
   end
   validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'is too short' }
-  validates :phone_number, numericality: { only_integer: true, message: ' is invalid. Input only number' }
+  validates :phone_number, format: { with: /\A\d+\z/, message: ' is invalid. Input only number' }
 
   def save
     order = Order.create(user_id: user_id, item_id: item_id)
