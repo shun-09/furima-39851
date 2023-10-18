@@ -55,8 +55,13 @@ RSpec.describe OrderAddress, type: :model do
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Postal code is invalid. Enter it as follows (e.g. 123-4567)")
       end
-      it 'phone_numberが10桁未満だと保存できないこと' do
+      it '電話番号が9桁以下では購入できない' do
         @order_address.phone_number = 123
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Phone number is too short")
+      end
+      it '電話番号が12桁以上では購入できない' do
+        @order_address.phone_number = 123456789123456
         @order_address.valid?
         expect(@order_address.errors.full_messages).to include("Phone number is too short")
       end
@@ -71,6 +76,9 @@ RSpec.describe OrderAddress, type: :model do
         expect(@order_address.errors.full_messages).to include("User can't be blank")
       end
       it 'itemが紐付いていないと保存できないこと' do
+        @order_address.item_id = nil
+        @order_address.valid?
+        expect(@order_address.errors.full_messages).to include("Item can't be blank")
       end
     end
   end

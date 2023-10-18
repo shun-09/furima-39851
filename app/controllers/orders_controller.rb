@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     end
     gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-    @item = Item.find(params[:item_id])
+    set_item
     @order_address = OrderAddress.new
   end
 
@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
       redirect_to root_path
     else
       gon.public_key = ENV["PAYJP_PUBLIC_KEY"]
-      @item = Item.find(params[:item_id])
+      set_item
       render :index, status: :unprocessable_entity
     end
   end
@@ -40,5 +40,9 @@ class OrdersController < ApplicationController
       card: order_params[:token],
       currency: 'jpy'
     )
+  end
+
+  def set_item
+    @item = Item.find(params[:item_id])
   end
 end
