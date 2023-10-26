@@ -7,7 +7,7 @@ class OrderAddress
     validates :user_id, :item_id, :municipality, :block, :phone_number, :token
     validates :prefecture_id, numericality: { other_than: 1, message: "を入力してください" }
     validates :postal_code, format: {
-      with: /\A\d{3}-\d{4}\z/, message: "is invalid. Enter it as follows (e.g. 123-4567)"
+      with: /\A\d{3}-\d{4}\z/, message: "は「3桁ハイフン4桁」の半角文字列で入力してください (例 123-4567)"
     }
   end
   validates :phone_number, format: { with: /\A\d{10,11}\z/, message: 'が短いです' }
