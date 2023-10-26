@@ -3,11 +3,11 @@ ja:
     attributes:
       user:
         nickname: ニックネーム
-        last_name: ニックネーム
-        first_name: ニックネーム
-        last_name_kana: ニックネーム
-        first_name_kana: ニックネーム
-        birth_date: ニックネーム
+        last_name: 苗字
+        first_name: 名前
+        last_name_kana: 苗字（カナ）
+        first_name_kana: 名前（カナ）
+        birth_date: 生年月日
       item:
         image: 商品画像
         name: 商品名
@@ -18,6 +18,7 @@ ja:
         prefecture_id: 発送元の地域
         period_id: 発送までの日数
         price: 販売価格
+        user: ユーザー
   activemodel:
     attributes:
       order_address:
@@ -28,3 +29,6 @@ ja:
         building_name: 建物名
         phone_number: 電話番号
         token: クレジットカード情報
+        user_id: ユーザー
+        item_id: 商品
+
